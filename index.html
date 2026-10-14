@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08090b">
+<meta name="description" content="Welcome to my world. Explore my story, interests, music, gaming and creations.">
+<title>itirtho.com — This is my story</title>
+<style>
+:root {
+  --bg: #08090b;
+  --panel: #131417;
+  --line: #303136;
+  --white: #f5f5f7;
+  --muted: #a5a5ae;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--white);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+button, a { -webkit-tap-highlight-color: transparent; }
+.wrap { width: min(100% - 36px, 920px); margin: auto; }
+header {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(8,9,11,.88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid #242529;
+}
+nav {
+  min-height: 66px; display: flex;
+  align-items: center; justify-content: space-between;
+  gap: 12px;
+}
+.logo { font-size: 19px; font-weight: 650; letter-spacing: -.6px; }
+.nav-right { display: flex; align-items: center; gap: 18px; }
+.nav-right a { color: #bdbdc4; font-size: 13px; }
+.menu-btn {
+  display: none; background: none; border: 1px solid var(--line);
+  color: white; border-radius: 10px; padding: 8px 12px;
+}
+.hero { padding: 85px 0 48px; }
+.eyebrow {
+  font-size: 11px; letter-spacing: 3px; color: #a8a8b1;
+  text-transform: uppercase;
+}
+h1 {
+  font-size: clamp(42px, 9vw, 78px);
+  line-height: 1.05; letter-spacing: -3px;
+  margin: 17px 0;
+}
+.lead { color: var(--muted); max-width: 480px; font-size: 16px; }
+.btn {
+  display: inline-block; margin-top: 16px; padding: 12px 18px;
+  background: #ededf0; color: #111216; border-radius: 999px;
+  font-weight: 600; font-size: 13px;
+}
+section { padding: 26px 0 35px; }
+.panel {
+  background: linear-gradient(145deg, #17181c, #101114);
+  border: 1px solid var(--line); border-radius: 19px; padding: 24px;
+}
+.profile { display: flex; gap: 15px; align-items: center; }
+.avatar {
+  width: 55px; height: 55px; flex-shrink: 0;
+  border-radius: 50%; display: grid; place-items: center;
+  background: #292a30; border: 1px solid #44454c;
+  font-size: 22px;
+}
+h2 { font-size: 23px; letter-spacing: -.6px; margin: 0 0 8px; }
+h3 { font-size: 16px; margin: 0; }
+p { color: var(--muted); margin: 7px 0 0; font-size: 14px; }
+.section-head { margin-bottom: 17px; }
+.grid {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.tile {
+  min-height: 145px; display: flex; flex-direction: column;
+  justify-content: space-between; gap: 18px;
+  padding: 19px; background: var(--panel);
+  border: 1px solid var(--line); border-radius: 16px;
+  transition: transform .2s, border-color .2s;
+}
+.tile:hover { transform: translateY(-3px); border-color: #777780; }
+.tile:focus-visible, a:focus-visible, button:focus-visible {
+  outline: 2px solid white; outline-offset: 4px;
+}
+.symbol { font-size: 25px; color: #dedee4; }
+.tile p { font-size: 12px; }
+footer {
+  margin-top: 32px; padding: 25px 0 35px;
+  border-top: 1px solid #242529;
+  display: flex; justify-content: space-between; gap: 12px;
+  color: #85858e; font-size: 12px;
+}
+@media (max-width: 620px) {
+  .wrap { width: min(100% - 28px, 500px); }
+  .hero { padding: 64px 0 30px; }
+  h1 { letter-spacing: -2px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .tile { min-height: 132px; padding: 15px; }
+  .menu-btn { display: block; }
+  .nav-right {
+    display: none; position: absolute; top: 66px; left: 0; right: 0;
+    padding: 18px; background: #101114;
+    border-bottom: 1px solid var(--line);
+    flex-direction: column; align-items: stretch; gap: 17px;
+  }
+  .nav-right.open { display: flex; }
+  .nav-right a { font-size: 15px; }
+  footer { flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important; transition: none !important;
+  }
+}
+</style>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a class="logo" href="#home">itirtho.com</a>
+    <button class="menu-btn" id="menuBtn"
+      aria-expanded="false" aria-controls="navLinks">Menu ☰</button>
+    <div class="nav-right" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#explore">Explore</a>
+      <a href="#contact">Contact ↗</a>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap" id="home">
+  <div class="hero">
+    <div class="eyebrow">Welcome to my world</div>
+    <h1>This is<br>my story.</h1>
+    <p class="lead">
+      A little about me, my interests, and the things I love.
+      Every story has a beginning. Here's mine.
+    </p>
+    <a class="btn" href="#explore">Explore my world ↗</a>
+  </div>
+
+  <section id="about">
+    <div class="panel">
+      <div class="profile">
+        <div class="avatar" aria-hidden="true">T</div>
+        <div>
+          <h2>About Me</h2>
+          <p>
+            Welcome to my personal space. I'm building my own world
+            through creativity, technology, music and gaming.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="explore">
+    <div class="section-head">
+      <div class="eyebrow">Discover</div>
+      <h2>Explore my world.</h2>
+      <p>Six little windows into my world.</p>
+    </div>
+    <div class="grid">
+      <a class="tile" href="#gallery">
+        <span class="symbol" aria-hidden="true">▧</span>
+        <div><h3>Gallery</h3><p>Photos & memories</p></div>
+      </a>
+      <a class="tile" href="#community">
+        <span class="symbol" aria-hidden="true">◎</span>
+        <div><h3>Community</h3><p>People & connections</p></div>
+      </a>
+      <a class="tile" href="#music">
+        <span class="symbol" aria-hidden="true">♫</span>
+        <div><h3>Music</h3><p>My soundtracks</p></div>
+      </a>
+      <a class="tile" href="#gaming">
+        <span class="symbol" aria-hidden="true">⌘</span>
+        <div><h3>Gaming</h3><p>My gaming world</p></div>
+      </a>
+      <a class="tile" href="#videos">
+        <span class="symbol" aria-hidden="true">▷</span>
+        <div><h3>Videos</h3><p>My creations</p></div>
+      </a>
+      <a class="tile" href="#journal">
+        <span class="symbol" aria-hidden="true">▤</span>
+        <div><h3>Journal</h3><p>Thoughts & posts</p></div>
+      </a>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="panel"><h2>Gallery</h2><p>My photos and memories will live here.</p></div>
+  </section>
+  <section id="community">
+    <div class="panel"><h2>Community</h2><p>My community links will go here.</p></div>
+  </section>
+  <section id="music">
+    <div class="panel"><h2>Music</h2><p>Music I enjoy and playlists I recommend.</p></div>
+  </section>
+  <section id="gaming">
+    <div class="panel"><h2>Gaming</h2><p>Games, highlights and gaming content.</p></div>
+  </section>
+  <section id="videos">
+    <div class="panel"><h2>Videos</h2><p>My video creations and featured clips.</p></div>
+  </section>
+  <section id="journal">
+    <div class="panel"><h2>Journal</h2><p>Ideas, updates and little stories.</p></div>
+  </section>
+</main>
+
+<footer class="wrap" id="contact">
+  <span>© 2026 itirtho.com</span>
+  <a href="mailto:hello@itirtho.com">Contact me ↗</a>
+  <span>Made with care.</span>
+</footer>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+  const opened = navLinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", String(opened));
+  menuBtn.textContent = opened ? "Close ✕" : "Menu ☰";
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.textContent = "Menu ☰";
+  });
+});
+</script>
+</body>
+</html>
